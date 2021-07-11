@@ -1,22 +1,54 @@
-<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-
-<div class="page-width page-width--narrow">
+<!-- <div class="page-width">
   <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
   </h1>
   <div class="rte">
     {{ page.content }}
   </div>
+</div> -->
+
+<div class="page">
+    <div>Home/{{page.title}}</div>
+    <h1 class="page-title">{{ page.title | escape }}</h1>
 </div>
 
+
+<style>
+  .page {
+    min-height: 244px;
+    background-image: url('https://images.unsplash.com/photo-1512626120412-faf41adb4874?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .page div {
+    font-size: 17px;
+  }
+
+  .page h1 {
+    margin: 0;
+    color: white
+  }
+  @media screen and (max-width:800px) {
+    .page{
+      background-size: inherit;
+    }
+    
+  }
+</style>
+
 {% schema %}
+
 {
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "spaced-section"
+"name": "t:sections.main-page.name",
+"tag": "section",
+"class": "spaced-section"
 }
+
 {% endschema %}

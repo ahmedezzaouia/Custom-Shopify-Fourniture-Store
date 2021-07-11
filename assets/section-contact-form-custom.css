@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.contact__fields input,
+.input-name,
+.input-phone,
+.input-text_area {
+    box-shadow: none;
+}
+
+label {
+    font-size: 1.4rem !important;
+}
+
+.contact__button button {
+    border-radius: 5px;
+    padding: 0 68px;
+}
+
+.store-information {
+    width: 29%;
+
+
+}
+
+.store-information h2 {
+    text-transform: uppercase;
+}
+
+.store-information .divider {
+    height: 1px;
+    width: 100%;
+    opacity: 0.3;
+    background-color: gray;
+}
+
+.store-information .item {
+    display: flex;
+    margin: 13px;
+}
+
+.store-information .item i {
+    font-size: 37px;
+}
+
+.store-information .item .text-content {
+    margin-left: 10px;
+}
+
+.store-information .item .text-content h3 {
+    margin: 0 6px;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+
+.store-information .item .text-content div p {
+    margin: 4px 2px;
+
+}
+
+.contact-wrapper {
+
+    display: flex;
+    padding: 50px 20px 50px 50px;
+    font-family: Montserrat, sans-serif;
+    justify-content: center;
+
+}
+
+.contact.page-width.page-width--narrow.spaced-section {
+
+    order: 1;
+    width: 90%;
+    height: 600px;
+    padding: 35px;
+    min-height: 498px;
+    margin: 0;
+
+}
+
+#ContactForm {
+    height: 100%;
+    padding: 22px;
+    box-shadow: 0px 6px 19px -8px;
+
+
+}
+
+.text-area {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    padding: 1.2rem;
+    min-height: 23rem;
+    resize: none;
+}
+
+.field__input,
+.select__select,
+.customer .field input,
+.customer select {
+    height: 5.5rem;
+}
+
+.field__input {
+    border-radius: 6px;
+    background-color: #F7F7F7;
+    border: none;
+    outline: none;
+    font-size: 9px;
+}
+
+@media screen and (max-width:1070px) {
+    .store-information {
+        width: 27%;
+    }
+
+    .store-information .item .text-content div {
+
+        width: 139px;
+    }
+
+    .store-information .item .text-content div p {
+
+        overflow-wrap: anywhere;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .contact.page-width.page-width--narrow.spaced-section {
+        padding: 0;
+    }
+
+    #ContactForm {
+        height: auto;
+    }
+
+    .store-information {
+        width: auto;
+
+        margin: 15px;
+        padding: 10px;
+        box-shadow: 3px -1px 50px -21px;
+
+
+    }
+
+    .store-information .item .text-content div {
+        width: auto;
+        overflow-wrap: normal;
+
+    }
+
+    .store-information h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Font Awesome 5 Free';
+    }
+
+    .store-information .item .text-content h3 {
+        margin: 10px 6px;
+        font-size: 17px;
+    }
+
+    .store-information .item:first-of-type i {
+        padding: 0 10px;
+    }
+
+    .store-information .item:first-of-type .text-content {
+        margin: 0;
+    }
+}
