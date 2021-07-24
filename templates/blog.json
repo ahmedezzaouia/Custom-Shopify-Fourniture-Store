@@ -1,26 +1,17 @@
 {
   "sections": {
-    "main": {
+    "page":{
+      "type": "main-page"
+    },
+    "blog": {
       "type": "main-blog",
-      "blocks": {
-        "title": {
-          "type": "title"
-        },
-        "summary": {
-          "type": "summary"
-        },
-        "link": {
-          "type": "link"
-        }
-      },
-      "block_order": [
-        "title",
-        "summary",
-        "link"
-      ]
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
-    "main"
+    "page",
+    "blog"
   ]
 }

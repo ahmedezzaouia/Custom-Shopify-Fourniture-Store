@@ -35,6 +35,22 @@
 
         {% style %}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{settings.type_body_font | font_face: font_display: 'swap'}}{{body_font_bold | font_face: font_display: 'swap'}}{{body_font_italic | font_face: font_display: 'swap'}}{{body_font_bold_italic | font_face: font_display: 'swap'}}{{settings.type_header_font | font_face: font_display: 'swap'}}:root {
     --font-body-family: {{settings.type_body_font.family}}, {{settings.type_body_font.fallback_families}};
     --font-body-style: {{settings.type_body_font.style}};
@@ -86,9 +102,24 @@ body {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endstyle %}
 
-        {{ 'base.css' | asset_url | stylesheet_tag }}
 
         {%- unless settings.type_body_font.system? -%}
             <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -99,7 +130,12 @@ body {
 
         <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
+        <!-- add your code here  -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+        {{ 'base.css' | asset_url | stylesheet_tag }}
+
     </head>
 
     <body>

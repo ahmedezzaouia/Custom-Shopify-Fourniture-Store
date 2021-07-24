@@ -434,3 +434,11 @@ class DeferredMedia extends HTMLElement {
 }
 
 customElements.define('deferred-media', DeferredMedia);
+
+
+// this code is for blog content 
+// const allContent = document.querySelectorAll('.blog-item .article-content')
+// allContent.forEach((el) => {
+//   el.innerHTML = el.innerHTML.slice(0,150)+'...'
+// })
+

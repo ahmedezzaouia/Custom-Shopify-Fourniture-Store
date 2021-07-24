@@ -1,0 +1,292 @@
+{% assign your_blog_handle_here = 'news' %}
+{% assign how_many_articles_to_show = 3 %}
+
+<aside class="sidebare">
+    <!-- Categories section  -->
+    <div class="categories-block">
+        <div class="title-block">
+            <span class="title-block_title">
+                Categories
+            </span>
+        </div>
+        <div class="title-content">
+            <div class="categories">
+                <span class="categories-item">Living Room</span>
+                <span class="categories-item">Bedroom</span>
+                <span class="categories-item">Kitchen</span>
+                <span class="categories-item">Planter</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Recent blog posts  -->
+    <div class="title-block">
+        <span class="title-block_title">
+            Recent Post
+        </span>
+    </div>
+    <div class="title-content">
+        <div class="post-groups">
+            {% for post in blogs[your_blog_handle_here].articles limit: how_many_articles_to_show %}
+                <div class="post">
+                    <div class="post-img">
+                        <img alt="{{post.image_alt}}" src="{{post.image| img_url: '500x500'}}">
+                    </div>
+                    <div class="post-content">
+                        <a href="{{post.url}}">
+                            <span class="post-title">{{post.title}}
+                            </span>
+                        </a>
+
+                        <div class="post-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="post_item-date">{{post.created_at | date: "%a, %b %d, %y"}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+    <!-- Blog tags  -->
+    <div class="title-block">
+        <span class="title-block_title">
+            Blog Tags
+        </span>
+    </div>
+    <div class="title-content">
+        <ul class="tags-groupe">
+            {% for tag in tags %}
+                <li class="tag">
+                    <a href="/blogs/news/tagged/{{tag}}">{{tag}}</a>
+                </li>
+            {% endfor %}
+
+
+        </ul>
+    </div>
+
+    <!-- image banner  -->
+    <div class="banner">
+        <div class="img-wrapper">
+            <img alt="image banner" src="https://cdn.shopify.com/s/files/1/1756/0223/t/2/assets/custom_banner.jpg?v=3736366670376904113">
+
+        </div>
+    </div>
+</aside>
+
+<style>
+    .sidebare {
+        width: 22%;
+    }
+
+    /* categores section  */
+    .categories-block {
+        background-color: #dcdcdc4d;
+        margin: 0 9px 0 23px;
+    }
+
+    .title-block {
+        padding: 15px 8px;
+        margin-bottom: 25px;
+        margin-left: 17px;
+        position: relative;
+    }
+
+    .title-block .title-block_title {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .title-block .title-block_title::before {
+        content: "";
+        background-color: grey;
+        width: 100%;
+        height: 0.5px;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        opacity: 0.2;
+    }
+
+    .title-block .title-block_title::after {
+        content: "";
+        background-color: #4d9a58;
+        width: 31%;
+        height: 4px;
+        position: absolute;
+        top: 44px;
+        left: 10px;
+    }
+
+    .title-content {
+        margin-bottom: 30px;
+    }
+
+
+    .title-content .categories {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title-content .categories-item {
+        padding: 14px 30px;
+        margin-right: 12px;
+        border-bottom: 0.3px solid white;
+
+    }
+
+    .title-content .categories-item:hover {
+        color: #209423;
+        cursor: pointer;
+    }
+
+    /* recent posts  */
+    .post {
+        display: flex;
+        /* background-color: rgb(33, 189, 176); */
+        margin: 15px 5px 35px 15px;
+        position: relative;
+    }
+
+    .post::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-bottom: 2px dotted #dfdbdb;
+        bottom: -16px;
+    }
+
+    .post-groups {
+        padding: 0 10px;
+    }
+
+    .post-groups .post:last-child::after {
+        content: none;
+    }
+
+    .post .post-img {
+        width: 36%;
+    }
+
+    .post .post-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .post .post-content {
+        width: 60%;
+        margin: 5px 1px 0 12px;
+    }
+
+    .post-date {
+        margin-top: 6px;
+        opacity: 0.5;
+    }
+
+    .post-date i {
+
+        font-size: 11px;
+
+    }
+
+    .post_item-date {
+        font-size: 11px;
+    }
+
+    .post-title {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .post-title:hover {
+        color: #209423;
+        cursor: pointer;
+    }
+
+    /* Blog tags  */
+
+    .tags-groupe {
+        display: flex;
+        list-style: none;
+        /* background-color: burlywood; */
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .tag {
+        margin: 6px 7px;
+        /* border: 1px solid grey; */
+        padding: 4px 9px;
+        font-size: 13px;
+        box-shadow: 0 2px 2px 1px rgb(0 0 0 / 40%)
+    }
+    .tag:hover {
+        background-color: #e3dfdf52;
+        cursor: pointer;
+    }
+    .tag a {
+        text-decoration: none;
+        color: #a4a4a4;
+    }
+
+    /* Banner Image  */
+
+
+    .banner .img-wrapper {
+        width: 90%;
+        height: 470px;
+        background: aquamarine;
+        margin: auto;
+    }
+
+    .banner .img-wrapper img {
+        width: 100%;
+        height: 100%;
+    }
+    
+@media only screen and (max-width:1350px) {
+  .sidebare {
+    width: 27%;
+  }
+}
+@media only screen and (max-width:1200px) {
+  
+}
+@media only screen and (max-width:1000px) {
+    .sidebare {
+    width: 38%;
+  }
+}
+@media only screen and (max-width:840px) {
+    .sidebare {
+    width: 32%;
+  }
+}
+@media only screen and (max-width:725px) {
+    .sidebare {
+    width: 34%;
+  }
+}
+@media only screen and (max-width:650px) {
+    .sidebare {
+    width: 100%;
+    padding: 13px 47px;
+    order: 1
+  }
+}
+@media only screen and (max-width:450px) {
+    .sidebare {
+    width: 100%;
+    padding: 13px 0;
+    order: 1
+  }
+
+}
+</style>
