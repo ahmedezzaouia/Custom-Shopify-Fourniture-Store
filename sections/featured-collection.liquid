@@ -1,163 +1,464 @@
-<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-badge.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-badge.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
-
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-
-<div class="collection page-width{% if section.settings.swipe_on_mobile == true and section.settings.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
-  <div class="{% if section.settings.show_view_all and section.settings.swipe_on_mobile %}title-wrapper-with-link{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
-    <h2 class="title{% if section.settings.title == blank %} title--no-heading{% endif %}">{{ section.settings.title | escape }}</h2>
-
-    {%- if section.settings.show_view_all and section.settings.swipe_on_mobile -%}
-      <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
-    {%- endif -%}
-  </div>
-
-  {%- liquid
-    assign products_to_display = section.settings.collection.all_products_count
-
-    if section.settings.collection.all_products_count > section.settings.products_to_show
-      assign products_to_display = section.settings.products_to_show
-    endif
-  %}
-
-  <slider-component class="slider-mobile-gutter">
-    <ul class="grid grid--2-col{% if products_to_display == 4 or section.settings.collection == blank %} grid--2-col-tablet grid--4-col-desktop{% else %} grid--3-col-tablet{% endif %}{% if products_to_display > 5 %} grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}{% if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider slider--tablet grid--peek{% endif %}{% if section.settings.show_view_all == false or section.settings.collection.products.size < section.settings.products_to_show %} negative-margin{% endif %}{% if section.settings.show_view_all and section.settings.collection.products.size > section.settings.products_to_show %} negative-margin--small{% endif %}" role="list">
-      {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-        <li class="grid__item{% if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider__slide{% endif %}">
-          {% render 'product-card',
-            product_card_product: product,
-            media_size: section.settings.image_ratio,
-            show_secondary_image: section.settings.show_secondary_image,
-            add_image_padding: section.settings.add_image_padding,
-            show_vendor: section.settings.show_vendor
-          %}
-        </li>
-      {%- else -%}
-        {%- for i in (1..4) -%}
-          <li class="grid__item">
-            {% render 'product-card-placeholder' %}
-          </li>
-        {%- endfor -%}
-      {%- endfor -%}
-    </ul>
-    {%- if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 -%}
-      <div class="slider-buttons no-js-hidden{% if section.settings.collection.all_products_count < 4 %} medium-hide{% endif %}{% if section.settings.collection.all_products_count < 3 %} small-hide{% endif %}">
-        <div class="slider-counter caption">
-          <span class="slider-counter--current">1</span>
-          <span aria-hidden="true"> / </span>
-          <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-          <span class="slider-counter--total">{{ products_to_display }}</span>
+  <!-- this for Features Products  -->
+  <div class="shell">
+    <div class="container">
+      <div class="container text-center">
+        <h1>Features Products </h1>
         </div>
-        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
+        
+      <div class="row">
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="https://3.bp.blogspot.com/-eDeTttUjHxI/WVSvmI-552I/AAAAAAAAAKw/0T3LN6jABKMyEkTRUUQMFxpe6PLvtcMMwCPcBGAYYCw/s1600/001-culture-clash-matthew-gianoulis.jpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Ethnic</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Introvert</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-XL_Ba-178Fo/WVSvm5AbApI/AAAAAAAAAK4/X5109HTqUiAhPjbmz4NFVHcpL7ZWe6T3ACPcBGAYYCw/s1600/wow-29.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Beauty</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="https://3.bp.blogspot.com/-iUes8qr4uC8/WVSvl6Wf_fI/AAAAAAAAAKs/JiTUUVvdbqEC_QGGaQhuVJiezIN3LIqEgCPcBGAYYCw/s1600/IMG_5367-bp.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Drama</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart cvf ggf gfg g</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    {%- endif -%}
-  </slider-component>
-
-  {%- if section.settings.show_view_all and section.settings.collection.all_products_count > section.settings.products_to_show -%}
-    <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-      <a href="{{ section.settings.collection.url }}"
-        class="button"
-        aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
-      >
-        {{ 'sections.featured_collection.view_all' | t }}
-      </a>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="https://3.bp.blogspot.com/-eDeTttUjHxI/WVSvmI-552I/AAAAAAAAAKw/0T3LN6jABKMyEkTRUUQMFxpe6PLvtcMMwCPcBGAYYCw/s1600/001-culture-clash-matthew-gianoulis.jpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Ethnic</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Introvert</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="https://1.bp.blogspot.com/-XL_Ba-178Fo/WVSvm5AbApI/AAAAAAAAAK4/X5109HTqUiAhPjbmz4NFVHcpL7ZWe6T3ACPcBGAYYCw/s1600/wow-29.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>Beauty</span>
+              </div>
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">Rp500.000</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
     </div>
-  {%- endif -%}
-</div>
+  </div>
+  <!-- End for Features Products  -->
 
-{% schema %}
-{
-  "name": "t:sections.featured-collection.name",
-  "tag": "section",
-  "class": "spaced-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "default": "Featured collection",
-      "label": "t:sections.featured-collection.settings.title.label"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "t:sections.featured-collection.settings.collection.label"
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "min": 2,
-      "max": 12,
-      "step": 2,
-      "default": 4,
-      "label": "t:sections.featured-collection.settings.products_to_show.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_view_all",
-      "default": true,
-      "label": "t:sections.featured-collection.settings.show_view_all.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": false,
-      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.featured-collection.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.featured-collection.settings.image_ratio.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.featured-collection.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "add_image_padding",
-      "default": false,
-      "label": "t:sections.featured-collection.settings.add_image_padding.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.featured-collection.settings.show_vendor.label"
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.featured-collection.presets.name"
-    }
-  ]
+  <style>
+
+
+    @import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
+    
+.container .text-center{
+padding: 50px;
 }
-{% endschema %}
+.shell{
+  padding:80px 0;
+  margin-bottom: 50px;
+}
+.wsk-cp-product{
+  background:#fff;
+  padding:15px;
+  border-radius:6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  position:relative;
+  margin:20px auto;
+}
+.wsk-cp-img{
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translate(-50%);
+  -webkit-transform:translate(-50%);
+  -ms-transform:translate(-50%);
+  -moz-transform:translate(-50%);
+  -o-transform:translate(-50%);
+  -khtml-transform:translate(-50%);
+  width: 100%;
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.wsk-cp-img img{
+  width:100%;
+  transition: all 0.2s ease-in-out;
+  border-radius:6px;
+}
+.wsk-cp-product:hover .wsk-cp-img{
+  top:-40px;
+}
+.wsk-cp-product:hover .wsk-cp-img img{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.wsk-cp-text{
+  padding-top:150%;
+}
+.wsk-cp-text .category{
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  padding:5px;
+  margin-bottom:45px;
+  position:relative;
+  transition: all 0.2s ease-in-out;
+}
+.wsk-cp-text .category > *{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -khtml-transform: translate(-50%,-50%);
+    
+}
+.wsk-cp-text .category > span{
+  padding: 12px 30px;
+  border: 1px solid #313131;
+  background:#212121;
+  color:#fff;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  border-radius:27px;
+  transition: all 0.05s ease-in-out;
+  
+}
+.wsk-cp-product:hover .wsk-cp-text .category > span{
+  border-color:#ddd;
+  box-shadow: none;
+  padding: 11px 28px;
+}
+.wsk-cp-product:hover .wsk-cp-text .category{
+  margin-top: 0px;
+}
+.wsk-cp-text .title-product{
+  text-align:center;
+}
+.wsk-cp-text .title-product h3{
+  font-size:20px;
+  font-weight:bold;
+  margin:15px auto;
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  width:100%;
+}
+.wsk-cp-text .description-prod p{
+  margin:0;
+}
+/* Truncate */
+.wsk-cp-text .description-prod {
+  text-align:center;
+  width: 100%;
+  height:62px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  margin-bottom:15px;
+}
+.card-footer{
+  padding: 25px 0 5px;
+  border-top: 1px solid #ddd;
+}
+.card-footer:after, .card-footer:before{
+  content:'';
+  display:table;
+}
+.card-footer:after{
+  clear:both;
+}
+
+.card-footer .wcf-left{
+  float:left;
+  
+}
+
+.card-footer .wcf-right{
+  float:right;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+}
+
+a.buy-btn{
+  display:block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  width:35px;
+  height:35px;
+  line-height:35px;
+  border-radius:50%;
+  border:1px solid #212121;
+  transition: all 0.2s ease-in-out;
+}
+a.buy-btn:hover , a.buy-btn:active, a.buy-btn:focus{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+  text-decoration:none;
+}
+.wsk-btn{
+  display:inline-block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  border-color: #FF9800;
+  background: #FF9800;
+  padding:12px 30px;
+  border-radius:27px;
+  margin: 0 5px;
+}
+.wsk-btn:hover, .wsk-btn:focus, .wsk-btn:active{
+  text-decoration:none;
+  color:#fff;
+}  
+.red{
+  color:#F44336;
+  font-size:22px;
+  display:inline-block;
+  margin: 0 5px;
+}
+@media screen and (max-width: 991px) {
+  .wsk-cp-product{
+    margin:40px auto;
+  }
+  .wsk-cp-product .wsk-cp-img{
+  top:-40px;
+}
+.wsk-cp-product .wsk-cp-img img{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+  .wsk-cp-product .wsk-cp-text .category > span{
+  border-color:#ddd;
+  box-shadow: none;
+  padding: 11px 28px;
+}
+.wsk-cp-product .wsk-cp-text .category{
+  margin-top: 0px;
+}
+a.buy-btn{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+}
+}
+
+
+ /* End for Features Products */
+
+/* style for image banner  */
+
+
+.spacer {
+	height: 300px;
+}
+
+.banner {
+	background-color: #E0F1FF;
+	width: 100%;
+	height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.copy {
+	font-family: 'Montserrat', sans-serif;
+	max-width: 400px;
+	text-align: center;
+}
+
+.copy .title {
+	font-size: 2.25rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 1.5rem;
+}
+
+.copy .link {
+	text-decoration: none;
+	text-align: center;
+}
+
+.copy .text {
+	color: #fff;
+	font-size: 1rem;
+	background-color: #3A5DAE;
+	padding: 1.125rem 2rem;
+	border-radius: 50px;
+	min-width: 200px;
+	display: inline-block;
+}
+
+
+/*
+ *
+ * Product Styles
+ *
+ */
+.wrapper {
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	width: 500px;
+	height: 500px;
+	top: 0;
+	z-index: 5;
+}
+
+.wrapper.left {
+	left: 0;
+}
+
+.wrapper.right {
+	right: 0%;
+}
+
+.image {
+	position: absolute;
+	z-index: 1;
+	top: -50px;
+	width: 500px;
+	height: 500px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.left .image {
+	background-image: url(https://i.ibb.co/qMk1VFG/side-left.png);
+}
+
+.right .image {
+	background-position: right;
+	background-image: url(https://i.ibb.co/K5pSMgC/side-right.png);
+}
+
+/* end style image banner */
+
+
+
+
+  </style>

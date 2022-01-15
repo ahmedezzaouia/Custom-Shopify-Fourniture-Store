@@ -32,29 +32,20 @@
         "title": "Featured products"
       }
     },
-    "image_text": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading"
-        },
-        "text": {
-          "type": "text"
-        },
-        "button": {
-          "type": "button"
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ]
+    
+    "blogs_collections": {
+      "type": "blogs_collections"
+      
+    }
+    ,
+    "categories_collections": {
+      "type": "collection_images"
     }
   },
   "order": [
     "image_banner",
+    "categories_collections",
     "featured_products",
-    "image_text"
+    "blogs_collections"
   ]
 }
