@@ -98,8 +98,179 @@
 
     </div>
   </div>
+
+  <figure class="container-hero effect-move">
+    <img class="container-hero-image effect-image"
+      src="https://cdn.pixabay.com/photo/2015/12/05/23/16/office-1078869_960_720.jpg" alt="" />
+    <figcaption class="container-hero-content">
+      <span class="hero-tag effect-target">Category</span>
+      <h2 class="container-hero-title effect-target">Another Long Title With Lots of Text</h2>
+      <p class="hero-text effect-target effect-text">This description will have to be truncated if it becomes too
+        long.</p>
+      <a class="container-hero-link" href="">View more</a>
+    </figcaption>
+  </figure>
+
+
 </div>
 <!-- End for Features Products  -->
+
+
+
+
+
+
+
+
+<style>
+  .container-collection {
+    max-width: 880px;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+
+
+  .container-hero {
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    cursor: pointer;
+    margin: 20px;
+    max-height: 400px;
+  }
+
+  .container-hero-image {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.2;
+  }
+
+  .container-hero-content {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .container-hero-content::before,
+  .container-hero-content::after {
+    pointer-events: none;
+  }
+
+  .container-hero-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+  }
+
+  .container-hero-title {
+    letter-spacing: -1px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0.25em 0;
+    line-height: 1;
+  }
+
+  .container-hero-title span {
+    font-weight: 800;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: .5em;
+    padding: .5em;
+    background: #fff;
+    color: #000;
+  }
+
+  .container-hero h2,
+  .container-hero p {
+    margin: 0;
+  }
+
+  .container-hero p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+    height: 2.25em;
+    overflow: hidden;
+  }
+
+
+  .effect-image {
+    max-width: none;
+    width: -webkit-calc(100% + 50px);
+    width: calc(100% + 50px);
+    opacity: 0.2;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-40px, 0, 0);
+    transform: translate3d(-40px, 0, 0);
+  }
+
+  .effect-target {
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+
+  .effect-target {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+  }
+
+  .effect-text {
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+    transition: opacity 0.2s, transform 0.35s;
+  }
+
+  .effect-move:hover .effect-image,
+  .effect-move:hover .effect-text {
+    opacity: 1;
+  }
+
+  .effect-move:hover .effect-target,
+  .effect-move:hover .effect-image {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .effect-move:hover .effect-text {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+  }
+
+  /* end for collection images style */
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
