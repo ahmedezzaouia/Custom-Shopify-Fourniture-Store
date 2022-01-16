@@ -2,164 +2,166 @@
 <div class="container-collection">
 
     <figure class="hero-grid effect-move">
-      <img class="hero-grid-image effect-image" src="https://cdn.dribbble.com/users/329207/screenshots/4836512/bemocs_wsj_01.jpg" alt="" />
-      <figcaption class="hero-grid-content">
-        <span class="hero-tag effect-target">Category</span>
-        <h2 class="hero-grid-title effect-target">The Rain In Spain</h2>
-        <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p>
-        <a class="hero-grid-link" href="#">View more</a>
-      </figcaption>
+        <img class="hero-grid-image effect-image"
+            src="https://cdn.pixabay.com/photo/2016/11/21/12/59/couch-1845270_960_720.jpg" alt="" />
+        <figcaption class="hero-grid-content">
+            <span class="hero-tag effect-target">Category</span>
+            <h2 class="hero-grid-title effect-target">The Rain In Spain</h2>
+            <p class="hero-grid-text effect-target effect-text">Falls mainly on the plain.</p>
+            <a class="hero-grid-link" href="">View more</a>
+        </figcaption>
     </figure>
-  
+
     <figure class="hero-grid effect-move">
-      <img class="hero-grid-image effect-image" src="https://cdn.dribbble.com/users/648922/screenshots/4835669/ecology.png" alt="" />
-      <figcaption class="hero-grid-content">
-        <span class="hero-tag effect-target">Category</span>
-        <h2 class="hero-grid-title effect-target">Another Long Title With Lots of Text</h2>
-        <p class="hero-text effect-target effect-text">This description will have to be truncated if it becomes too long.</p>
-        <a class="hero-grid-link" href="#">View more</a>
-      </figcaption>
+        <img class="hero-grid-image effect-image"
+            src="https://cdn.pixabay.com/photo/2016/11/29/01/24/dog-1866530_960_720.jpg" alt="" />
+        <figcaption class="hero-grid-content">
+            <span class="hero-tag effect-target">Category</span>
+            <h2 class="hero-grid-title effect-target">Another Long Title With Lots of Text</h2>
+            <p class="hero-text effect-target effect-text">This description will have to be truncated if it becomes too
+                long.</p>
+            <a class="hero-grid-link" href="">View more</a>
+        </figcaption>
     </figure>
-  </div>
-  <!-- end for collection images  -->
+</div>
+<!-- end for collection images  -->
 
 
-  <style>
-    
-
-.container-collection{
-  max-width: 880px;  
-  margin: 40px auto;
-  overflow: hidden;
-}
+<style>
+    .container-collection {
+        max-width: 880px;
+        margin: 40px auto;
+        overflow: hidden;
+    }
 
 
-.hero-grid {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	background: #3085a3;
-  cursor: pointer;
-  margin: 20px;
-	max-width: 400px;
-	max-height: 300px;
-}
+    .hero-grid {
+        position: relative;
+        float: left;
+        overflow: hidden;
+        background: #3085a3;
+        cursor: pointer;
+        margin: 20px;
+        max-width: 400px;
+        max-height: 300px;
+    }
 
-.hero-grid-image {
-	position: relative;
-	display: block;
-	min-height: 100%;
-	max-width: 100%;
-	opacity: 0.2;
-}
+    .hero-grid-image {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+        opacity: 0.2;
+    }
 
-.hero-grid-content {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+    .hero-grid-content {
+        padding: 2em;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 
-.hero-grid-content::before,
-.hero-grid-content::after {
-	pointer-events: none;
-}
+    .hero-grid-content::before,
+    .hero-grid-content::after {
+        pointer-events: none;
+    }
 
-.hero-grid-link {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-	text-indent: 200%;
-	white-space: nowrap;
-	font-size: 0;
-	opacity: 0;
-}
+    .hero-grid-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        text-indent: 200%;
+        white-space: nowrap;
+        font-size: 0;
+        opacity: 0;
+    }
 
-.hero-grid-title {
-	letter-spacing: -1px;
-	font-weight: 300;
-  margin: 0;
-  padding: 0.25em 0;
-  line-height: 1;
-}
+    .hero-grid-title {
+        letter-spacing: -1px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0.25em 0;
+        line-height: 1;
+    }
 
-.hero-grid-title span {
-	font-weight: 800;
-}
+    .hero-grid-title span {
+        font-weight: 800;
+    }
 
-.hero-tag {
-  display: inline-block;
-  font-size: .5em;
-  padding: .5em;
-  background: #fff;
-  color: #000;
-}
+    .hero-tag {
+        display: inline-block;
+        font-size: .5em;
+        padding: .5em;
+        background: #fff;
+        color: #000;
+    }
 
-.hero-grid h2,
-.hero-grid p {
-	margin: 0;
-}
+    .hero-grid h2,
+    .hero-grid p {
+        margin: 0;
+    }
 
-.hero-grid p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
-  height: 2.25em;
-  overflow:hidden;
-}
+    .hero-grid p {
+        letter-spacing: 1px;
+        font-size: 68.5%;
+        height: 2.25em;
+        overflow: hidden;
+    }
 
 
-.effect-image {
-	max-width: none;
-	width: -webkit-calc(100% + 50px);
-	width: calc(100% + 50px);
-	opacity: 0.2;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-40px,0, 0);
-	transform: translate3d(-40px,0,0);
-}
+    .effect-image {
+        max-width: none;
+        width: -webkit-calc(100% + 50px);
+        width: calc(100% + 50px);
+        opacity: 0.2;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: translate3d(-40px, 0, 0);
+        transform: translate3d(-40px, 0, 0);
+    }
 
-.effect-target {
-	-webkit-transform: translate3d(0,40px,0);
-	transform: translate3d(0,40px,0);
-}
+    .effect-target {
+        -webkit-transform: translate3d(0, 40px, 0);
+        transform: translate3d(0, 40px, 0);
+    }
 
-.effect-target {
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-}
+    .effect-target {
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+    }
 
-.effect-text {
-	color: rgba(255,255,255,0.8);
-	opacity: 0;
-	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
-	transition: opacity 0.2s, transform 0.35s;
-}
+    .effect-text {
+        color: rgba(255, 255, 255, 0.8);
+        opacity: 0;
+        -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+        transition: opacity 0.2s, transform 0.35s;
+    }
 
-.effect-move:hover .effect-image,
-.effect-move:hover .effect-text {
-	opacity: 1;
-}
+    .effect-move:hover .effect-image,
+    .effect-move:hover .effect-text {
+        opacity: 1;
+    }
 
-.effect-move:hover .effect-target,
-.effect-move:hover .effect-image {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
+    .effect-move:hover .effect-target,
+    .effect-move:hover .effect-image {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
 
-.effect-move:hover .effect-text {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
-	-webkit-transition-duration: 0.35s;
-	transition-duration: 0.35s;
-}
-/* end for collection images style */
-  </style>
+    .effect-move:hover .effect-text {
+        -webkit-transition-delay: 0.05s;
+        transition-delay: 0.05s;
+        -webkit-transition-duration: 0.35s;
+        transition-duration: 0.35s;
+    }
+
+    /* end for collection images style */
+</style>
