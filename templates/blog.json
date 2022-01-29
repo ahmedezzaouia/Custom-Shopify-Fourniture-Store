@@ -1,8 +1,6 @@
 {
   "sections": {
-    "page":{
-      "type": "main-page"
-    },
+   
     "blog": {
       "type": "main-blog",
       "settings": {
@@ -11,7 +9,7 @@
     }
   },
   "order": [
-    "page",
+ 
     "blog"
   ]
 }
